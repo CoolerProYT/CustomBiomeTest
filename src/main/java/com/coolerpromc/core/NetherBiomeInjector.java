@@ -9,23 +9,23 @@ import java.util.*;
 import java.util.function.Function;
 
 public final class NetherBiomeInjector {
-    private static final Map<ResourceKey<Biome>, Climate.ParameterPoint> CUSTOM_BIOME = new HashMap<>();
+    private static final List<BiomeData> CUSTOM_BIOME = new ArrayList<>();
 
-    private NetherBiomeInjector() {
+    public static void registerBiome(ResourceKey<Biome> biome, Climate.ParameterPoint spawnNoisePoint, int weight) {
+        CUSTOM_BIOME.add(new BiomeData(biome, spawnNoisePoint, weight));
     }
 
-    public static void registerBiome(ResourceKey<Biome> biome, Climate.ParameterPoint spawnNoisePoint) {
-        CUSTOM_BIOME.put(biome, spawnNoisePoint);
-    }
-
-    public static <T> Climate.ParameterList<T> withModdedBiomeEntries(Climate.ParameterList<T> entries, Function<ResourceKey<Biome>, T> biomes) {
+    public static <T> Climate.ParameterList<T> injectBiomes(Climate.ParameterList<T> entries, Function<ResourceKey<Biome>, T> biomes) {
         if (CUSTOM_BIOME.isEmpty()) {
             return entries;
         } else {
             ArrayList<Pair<Climate.ParameterPoint, T>> entryList = new ArrayList<>(entries.values());
 
-            for(Map.Entry<ResourceKey<Biome>, Climate.ParameterPoint> entry : CUSTOM_BIOME.entrySet()) {
-                entryList.add(Pair.of(entry.getValue(), biomes.apply(entry.getKey())));
+            for(BiomeData entry : CUSTOM_BIOME) {
+                int injectionCount = Math.max(1, entry.weight() / 3);
+                for (int i = 0; i < injectionCount; i++) {
+                    entryList.add(Pair.of(entry.climate(), biomes.apply(entry.biome())));
+                }
             }
 
             return new Climate.ParameterList<>(Collections.unmodifiableList(entryList));

@@ -28,7 +28,8 @@ public class BiomeRegister {
                         Climate.Parameter.span(0.0F, 0.0F),
                         Climate.Parameter.span(-0.56F, 0.56F),
                         1L
-                )
+                ),
+                7
         );
     }
 }

@@ -17,6 +17,6 @@ import java.util.function.Function;
 public class NetherBiomeBuilderMixin {
     @Inject(method = {"apply"}, at = {@At("RETURN")}, cancellable = true)
     public <T> void apply(Function<ResourceKey<Biome>, T> function, CallbackInfoReturnable<Climate.ParameterList<T>> cir) {
-        cir.setReturnValue(NetherBiomeInjector.withModdedBiomeEntries(cir.getReturnValue(), function));
+        cir.setReturnValue(NetherBiomeInjector.injectBiomes(cir.getReturnValue(), function));
     }
 }

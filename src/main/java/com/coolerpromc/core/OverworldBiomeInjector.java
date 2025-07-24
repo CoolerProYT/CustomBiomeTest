@@ -20,15 +20,8 @@ public class OverworldBiomeInjector {
         for (BiomeData entry : CUSTOM_BIOMES) {
             int injectionCount = Math.max(1, entry.weight() / 3);
             for (int i = 0; i < injectionCount; i++) {
-                consumer.accept(Pair.of(entry.climate, entry.biome));
+                consumer.accept(Pair.of(entry.climate(), entry.biome()));
             }
-        }
-    }
-
-    public record BiomeData(ResourceKey<Biome> biome, Climate.ParameterPoint climate, int weight) {
-        @Override
-        public int weight() {
-            return Math.max(1, Math.min(10, weight));
         }
     }
 }
