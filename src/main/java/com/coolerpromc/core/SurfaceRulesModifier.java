@@ -9,6 +9,11 @@ import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 
+/**
+ * This class copies the surface rules from Vanilla SurfaceRuleData class,
+ * call your own RuleSource methods to add your own rules.
+ * Add your surface rules between the comments in the overworld() and nether() methods.
+ */
 public class SurfaceRulesModifier {
     private static final SurfaceRules.RuleSource AIR = makeStateRule(Blocks.AIR);
     private static final SurfaceRules.RuleSource BEDROCK = makeStateRule(Blocks.BEDROCK);
@@ -245,7 +250,7 @@ public class SurfaceRulesModifier {
                         )
                 ),
                 // Custom surface rules
-                ModSurfaceRules.makeTestBiomeRule(),
+                ModSurfaceRules.makeTestBiomeRule(), // Call your own custom surface rules here
                 // End of custom surface rules
                 SurfaceRules.ifTrue(
                         SurfaceRules.ON_FLOOR,
@@ -346,7 +351,7 @@ public class SurfaceRulesModifier {
                         )
                 ),
                 // Custom surface rules
-                ModSurfaceRules.makeTestNetherBiomeRule(),
+                ModSurfaceRules.makeTestNetherBiomeRule(), // Call your own custom surface rules here
                 // End of custom surface rules
                 SurfaceRules.ifTrue(
                         SurfaceRules.ON_FLOOR,

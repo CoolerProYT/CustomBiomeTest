@@ -6,6 +6,9 @@ import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 
+/**
+ * This class defines custom surface rules for biomes in the mod.
+ */
 public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource GRAVEL = SurfaceRules.state(Blocks.GRAVEL.defaultBlockState());
     private static final SurfaceRules.RuleSource STONE = SurfaceRules.state(Blocks.STONE.defaultBlockState());
@@ -15,6 +18,12 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource DIRT = SurfaceRules.state(Blocks.DIRT.defaultBlockState());
     private static final SurfaceRules.RuleSource PODZOL = SurfaceRules.state(Blocks.PODZOL.defaultBlockState());
 
+    /**
+     * Creates a surface rule for a test biome.
+     * This rule defines how the surface of the test biome should be generated based on various conditions.
+     *
+     * @return A SurfaceRules.RuleSource that defines the surface generation rules for the test biome.
+     */
     public static SurfaceRules.RuleSource makeTestBiomeRule(){
         SurfaceRules.ConditionSource surfacerules$conditionsource1 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(256), 0);
         SurfaceRules.ConditionSource surfacerules$conditionsource2 = SurfaceRules.yStartCheck(VerticalAnchor.absolute(63), -1);
@@ -65,6 +74,12 @@ public class ModSurfaceRules {
         );
     }
 
+    /**
+     * Creates a surface rule for a test nether biome.
+     * This rule defines how the surface of the test nether biome should be generated based on various conditions.
+     *
+     * @return A SurfaceRules.RuleSource that defines the surface generation rules for the test nether biome.
+     */
     public static SurfaceRules.RuleSource makeTestNetherBiomeRule() {
         SurfaceRules.ConditionSource surfacerules$conditionsource2 = SurfaceRules.yStartCheck(VerticalAnchor.absolute(30), 0);
         SurfaceRules.ConditionSource surfacerules$conditionsource3 = SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(35), 0));

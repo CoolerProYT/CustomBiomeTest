@@ -7,6 +7,12 @@ import net.minecraft.core.registries.Registries;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * This class is used to generate world generation data for the mod.
+ * It extends FabricDynamicRegistryProvider to provide dynamic registry entries.
+ * It could be any name, this class support DataPack entries, not limited to world generation.
+ * For Forge/NeoForge, use `DatapackBuiltinEntriesProvider` instead.
+ */
 public class ModWorldGenerator extends FabricDynamicRegistryProvider {
 	public ModWorldGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
 		super(output, registriesFuture);

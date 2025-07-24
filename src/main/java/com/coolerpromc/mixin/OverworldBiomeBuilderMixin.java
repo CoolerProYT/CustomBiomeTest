@@ -13,6 +13,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.function.Consumer;
 
+/**
+ * Mixin to inject custom biomes into the OverworldBiomeBuilder.
+ */
 @Mixin(OverworldBiomeBuilder.class)
 public class OverworldBiomeBuilderMixin {
     @Inject(method = "addBiomes", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/biome/OverworldBiomeBuilder;addOffCoastBiomes(Ljava/util/function/Consumer;)V"))

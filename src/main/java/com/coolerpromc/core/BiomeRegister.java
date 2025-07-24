@@ -3,6 +3,9 @@ package com.coolerpromc.core;
 import com.coolerpromc.worldgen.biome.ModBiomes;
 import net.minecraft.world.level.biome.Climate;
 
+/**
+ * This class is responsible for registering biomes in the game.
+ */
 public class BiomeRegister {
     public static void init() {
         OverworldBiomeInjector.registerBiome(

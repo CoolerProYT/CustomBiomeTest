@@ -18,15 +18,29 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
+/**
+ * This class is used to register custom biomes for the mod.
+ * It is for data generation to generate the biomes datapacks.
+ */
 public class ModBiomes {
     public static final ResourceKey<Biome> TEST_BIOME = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(CustomBiomes.MOD_ID, "test_biome"));
     public static final ResourceKey<Biome> TEST_NETHER_BIOME = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(CustomBiomes.MOD_ID, "test_nether_biome"));
 
+    /**
+     * This method is called by the data generator to register the biomes.
+     */
     public static void boostrap(BootstrapContext<Biome> context) {
         context.register(TEST_BIOME, testBiome(context));
         context.register(TEST_NETHER_BIOME, testNetherBiome(context));
     }
 
+    /**
+     * This method is used to create a test biome for the mod.
+     * It is used for testing purposes and can be modified as needed.
+     *
+     * @param context The bootstrap context for the biome.
+     * @return The created test biome.
+     */
     public static Biome testBiome(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
@@ -61,6 +75,13 @@ public class ModBiomes {
         return buildBiome(true, 0.8f, 0.7f, spawnBuilder, biomeBuilder, biomeSpecialEffects);
     }
 
+    /**
+     * This method is used to create a test nether biome for the mod.
+     * It is used for testing purposes and can be modified as needed.
+     *
+     * @param context The bootstrap context for the biome.
+     * @return The created test nether biome.
+     */
     public static Biome testNetherBiome(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIFIED_PIGLIN, 100, 4, 4));
