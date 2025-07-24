@@ -19,7 +19,7 @@
 			"com.coolerpromc.CustomBiomes"
 		],
 		"fabric-datagen": [
-			"com.coolerpromc.CustomBiomesDataGenerator"
+			"com.coolerpromc.datagen.CustomBiomesDataGenerator"
 		]
 	},
 	"mixins": [

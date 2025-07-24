@@ -3,24 +3,14 @@
   "package": "com.coolerpromc.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "MixinBiomeSource",
-    "MixinBuiltInRegistries",
-    "MixinChunkGenerator",
-    "MixinMultiNoiseBiomeSource",
-    "MixinNoiseBasedChunkGenerator",
-    "MixinNoiseGeneratorSettings",
-    "MixinParameterList",
-    "MixinPrimaryLevelData",
-    "MixinTheEndBiomeSource",
-    "MultiNoiseBiomeSourceAccess"
+    "NetherBiomeBuilderMixin",
+    "NoiseGeneratorSettingsMixin",
+    "OverworldBiomeBuilderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "overwrites": {
     "requireAnnotations": true
-  },
-  "client": [
-    "MixinWorldOpenFlows"
-  ]
+  }
 }

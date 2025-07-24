@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class BiomeInjector {
+public class OverworldBiomeInjector {
     private static final List<BiomeData> CUSTOM_BIOMES = new ArrayList<>();
 
     public static void registerBiome(ResourceKey<Biome> biome, Climate.ParameterPoint climate, int weight) {
