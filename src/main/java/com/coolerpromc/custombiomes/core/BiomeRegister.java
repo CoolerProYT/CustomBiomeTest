@@ -1,6 +1,8 @@
 package com.coolerpromc.custombiomes.core;
 
 import com.coolerpromc.custombiomes.worldgen.biome.ModBiomes;
+import net.fabricmc.fabric.impl.biome.TheEndBiomeData;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 
 /**
@@ -34,5 +36,8 @@ public class BiomeRegister {
                 ),
                 7
         );
+
+        TheEndBiomeData.addEndBarrensReplacement(BiomeKeys.END_HIGHLANDS, ModBiomes.TEST_NETHER_BIOME, 10);
+        TheEndBiomeData.addEndMidlandsReplacement(BiomeKeys.END_HIGHLANDS, ModBiomes.TEST_BIOME, 10);
     }
 }

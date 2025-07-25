@@ -1,5 +1,6 @@
 package com.coolerpromc.custombiomes.core;
 
+import com.coolerpromc.custombiomes.worldgen.biome.ModBiomes;
 import com.coolerpromc.custombiomes.worldgen.surface.ModSurfaceRules;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Block;
@@ -49,6 +50,7 @@ public class SurfaceRulesModifier {
     private static final MaterialRules.MaterialRule WARPED_NYLIUM = makeStateRule(Blocks.WARPED_NYLIUM);
     private static final MaterialRules.MaterialRule NETHER_WART_BLOCK = makeStateRule(Blocks.NETHER_WART_BLOCK);
     private static final MaterialRules.MaterialRule CRIMSON_NYLIUM = makeStateRule(Blocks.CRIMSON_NYLIUM);
+    private static final MaterialRules.MaterialRule ENDSTONE = makeStateRule(Blocks.END_STONE);
 
     public static MaterialRules.MaterialRule overworld(boolean aboveGround, boolean bedrockRoof, boolean bedrockFloor) {
         MaterialRules.MaterialCondition surfacetulesRules$conditionSource = MaterialRules.aboveY(YOffset.fixed(97), 2);
@@ -414,6 +416,22 @@ public class SurfaceRulesModifier {
                         )
                 ),
                 NETHERRACK
+        );
+    }
+
+    public static MaterialRules.MaterialRule end(){
+        return MaterialRules.sequence(
+                // Custom surface rules
+                MaterialRules.condition(
+                        MaterialRules.biome(ModBiomes.TEST_NETHER_BIOME),
+                        NETHERRACK
+                ),
+                MaterialRules.condition(
+                        MaterialRules.biome(ModBiomes.TEST_BIOME),
+                        SOUL_SOIL
+                ),
+                // End of custom surface rules
+                ENDSTONE
         );
     }
 
