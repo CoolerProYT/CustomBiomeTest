@@ -3,7 +3,6 @@
   "package": "com.coolerpromc.custombiomes.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "NetherBiomeBuilderMixin",
     "NoiseGeneratorSettingsMixin",
     "OverworldBiomeBuilderMixin"
   ],
