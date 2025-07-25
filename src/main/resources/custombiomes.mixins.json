@@ -3,9 +3,14 @@
   "package": "com.coolerpromc.custombiomes.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BiomeSourceMixin",
+    "ChunkNoiseSamplerMixin",
+    "MultiNoiseUtilMultiNoiseSamplerMixin",
     "NetherBiomeBuilderMixin",
+    "NoiseConfigMixin",
     "NoiseGeneratorSettingsMixin",
-    "OverworldBiomeBuilderMixin"
+    "OverworldBiomeBuilderMixin",
+    "TheEndBiomeSourceMixin"
   ],
   "injectors": {
     "defaultRequire": 1

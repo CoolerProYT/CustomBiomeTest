@@ -1,6 +1,7 @@
 package com.coolerpromc.custombiomes.core;
 
 import com.coolerpromc.custombiomes.worldgen.biome.ModBiomes;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 
 /**
@@ -34,5 +35,8 @@ public class BiomeRegister {
                 ),
                 7
         );
+
+        EndBiomeInjector.replaceMidlands(ModBiomes.TEST_BIOME, 7);
+        EndBiomeInjector.replaceBarrens(ModBiomes.TEST_NETHER_BIOME, 7);
     }
 }

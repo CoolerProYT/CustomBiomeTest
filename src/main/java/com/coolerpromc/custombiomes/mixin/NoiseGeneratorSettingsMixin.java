@@ -29,5 +29,9 @@ public class NoiseGeneratorSettingsMixin {
         if (this.noiseSettings.equals(NoiseSettings.NETHER_NOISE_SETTINGS)){
             cir.setReturnValue(SurfaceRulesModifier.nether());
         }
+
+        if (this.noiseSettings.equals(NoiseSettings.END_NOISE_SETTINGS)){
+            cir.setReturnValue(SurfaceRulesModifier.end());
+        }
     }
 }
