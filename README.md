@@ -35,8 +35,6 @@ This project demonstrates how to add **custom biomes to Minecraft** without rely
 > This is **not a professional or complete solution** for adding custom biomes.  
 > It only supports **simple biome registration** and is intended for experimentation or learning purposes.
 
-> NeoForge version data generation is broken, run datagen with Fabric version and copy the output to NeoForge version or create biome json manually.
-
 ---
 
 ## 💖 Support / Donation
