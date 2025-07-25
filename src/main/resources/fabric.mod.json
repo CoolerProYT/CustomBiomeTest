@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.coolerpromc.CustomBiomes"
+			"com.coolerpromc.custombiomes.CustomBiomes"
 		],
 		"fabric-datagen": [
-			"com.coolerpromc.datagen.CustomBiomesDataGenerator"
+			"com.coolerpromc.custombiomes.datagen.CustomBiomesDataGenerator"
 		]
 	},
 	"mixins": [

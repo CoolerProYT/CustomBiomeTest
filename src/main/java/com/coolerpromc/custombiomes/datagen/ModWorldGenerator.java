@@ -1,9 +1,9 @@
-package com.coolerpromc.datagen;
+package com.coolerpromc.custombiomes.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -14,13 +14,13 @@ import java.util.concurrent.CompletableFuture;
  * For Forge/NeoForge, use `DatapackBuiltinEntriesProvider` instead.
  */
 public class ModWorldGenerator extends FabricDynamicRegistryProvider {
-	public ModWorldGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+	public ModWorldGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
 		super(output, registriesFuture);
 	}
 
 	@Override
-	protected void configure(HolderLookup.Provider provider, Entries entries) {
-		entries.addAll(provider.lookupOrThrow(Registries.BIOME));
+	protected void configure(RegistryWrapper.WrapperLookup provider, Entries entries) {
+		entries.addAll(provider.getWrapperOrThrow(RegistryKeys.BIOME));
 	}
 
 	@Override

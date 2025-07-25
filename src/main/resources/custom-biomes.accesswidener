@@ -1,6 +1,3 @@
 accessWidener v2 named
-accessible field net/minecraft/world/level/levelgen/NoiseSettings OVERWORLD_NOISE_SETTINGS Lnet/minecraft/world/level/levelgen/NoiseSettings;
-accessible field net/minecraft/world/level/levelgen/NoiseSettings NETHER_NOISE_SETTINGS Lnet/minecraft/world/level/levelgen/NoiseSettings;
-accessible field net/minecraft/world/level/levelgen/NoiseSettings END_NOISE_SETTINGS Lnet/minecraft/world/level/levelgen/NoiseSettings;
-accessible field net/minecraft/world/level/levelgen/NoiseSettings CAVES_NOISE_SETTINGS Lnet/minecraft/world/level/levelgen/NoiseSettings;
-accessible field net/minecraft/world/level/levelgen/NoiseSettings FLOATING_ISLANDS_NOISE_SETTINGS Lnet/minecraft/world/level/levelgen/NoiseSettings;
+accessible field net/minecraft/world/gen/chunk/GenerationShapeConfig SURFACE Lnet/minecraft/world/gen/chunk/GenerationShapeConfig;
+accessible field net/minecraft/world/gen/chunk/GenerationShapeConfig NETHER Lnet/minecraft/world/gen/chunk/GenerationShapeConfig;
