@@ -1,12 +1,12 @@
-package com.coolerpromc;
+package com.coolerpromc.custombiomes;
 
-import com.coolerpromc.core.BiomeRegister;
+import com.coolerpromc.custombiomes.core.BiomeRegister;
 import net.fabricmc.api.ModInitializer;
 
 /**
  * Custom Biomes Mod
  * This mod initializes custom biomes for Minecraft.
- * For Forge or NeoForge, call `BiomeRegister.init()` in the main mod class constructor.
+ * For Forge or NeoForge, call `BiomeRegister.init()` in common setup.
  */
 public class CustomBiomes implements ModInitializer {
 	public static final String MOD_ID = "custom-biomes";

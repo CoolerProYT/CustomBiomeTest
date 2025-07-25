@@ -7,8 +7,8 @@ This project demonstrates how to add **custom biomes to Minecraft** without rely
 ## ✅ Features
 
 - Custom biome registration from scratch
-- (Should be) Compatible with **Minecraft Forge** (Not Tested), **NeoForge** (Not Tested), and **Fabric**
-- Tested with **Fabric** using **Mojang mappings (mojmap)**
+- (Should be) Compatible with **Minecraft Forge** (Not Tested), **NeoForge**, and **Fabric**
+- Tested with **Fabric**
 
 ---
 
@@ -25,7 +25,7 @@ This project demonstrates how to add **custom biomes to Minecraft** without rely
 ## 🧪 Tested Environment
 
 - **Mod Loader**: Fabric
-- **Mappings**: Mojang (mojmap)
+- **Mappings**: Yarn
 - **Minecraft Version**: 1.21.1
 
 ---

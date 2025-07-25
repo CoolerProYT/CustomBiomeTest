@@ -1,10 +1,10 @@
-package com.coolerpromc.datagen;
+package com.coolerpromc.custombiomes.datagen;
 
-import com.coolerpromc.worldgen.biome.ModBiomes;
+import com.coolerpromc.custombiomes.worldgen.biome.ModBiomes;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 
 /**
  * Data generator entry point for your mod
@@ -28,7 +28,7 @@ public class CustomBiomesDataGenerator implements DataGeneratorEntrypoint {
 	 * For Forge/NeoForge, you would typically use the `RegistrySetBuilder` and pass it to `DatapackBuiltinEntriesProvider` in its subclass constructor.
 	 */
 	@Override
-	public void buildRegistry(RegistrySetBuilder registryBuilder) {
-		registryBuilder.add(Registries.BIOME, ModBiomes::boostrap);
+	public void buildRegistry(RegistryBuilder registryBuilder) {
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::boostrap);
 	}
 }
